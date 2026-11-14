@@ -738,3 +738,6 @@ body { margin: 0; }
 .e-header nav a { padding-block: .3rem; }
 .e-appearance-panel { max-height: min(75vh, calc(100dvh - 6rem)); overflow-y: auto; overscroll-behavior: contain; }
 .e-perfume-card img, .e-perfume-hero img { object-fit: contain; padding: 1rem; background: #fff; }
+
+/* Frascos sin fondo: respetar el tema de la página y el canal alfa. */
+.e-perfume-card img, .e-perfume-hero img { background: transparent; object-fit: contain; }
