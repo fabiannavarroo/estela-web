@@ -1,4 +1,4 @@
-/** Catálogo editorial de ESTELA: artículos educativos y selecciones de perfumes reales. */
+/** Catálogo editorial de Estela. Imágenes fotográficas; las seis editoriales se han generado con IA. */
 const ARTICULOS = [
   {
     "id": "piramide-olfativa",
@@ -6,8 +6,8 @@ const ARTICULOS = [
     "titulo": "La pirámide olfativa, sin misterios",
     "categoria": "Guías",
     "resumen": "Una forma útil de entender las notas de salida, corazón y fondo, sin tomarlas como reglas rígidas.",
-    "imagen": "../images/portada-01.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piramide.jpg",
+    "alt": "Bergamota, flores blancas, rosa, madera y vainilla sobre piedra clara",
     "etiquetas": [
       "guías",
       "notas"
@@ -37,8 +37,8 @@ const ARTICULOS = [
     "titulo": "Eau de toilette, eau de parfum y extracto",
     "categoria": "Guías",
     "resumen": "Qué significan esas palabras en el frasco y por qué un porcentaje no lo explica todo.",
-    "imagen": "../images/portada-02.svg",
-    "alt": "",
+    "imagen": "../images/editorial-concentraciones.jpg",
+    "alt": "Tres frascos de laboratorio con líquido dorado y una pipeta de vidrio",
     "etiquetas": [
       "guías",
       "notas"
@@ -68,8 +68,8 @@ const ARTICULOS = [
     "titulo": "Las familias olfativas: tu mapa para explorar",
     "categoria": "Guías",
     "resumen": "Floral, amaderada, cítrica, aromática o gourmand: aprende a reconocer territorios aromáticos.",
-    "imagen": "../images/portada-03.svg",
-    "alt": "",
+    "imagen": "../images/editorial-familias.jpg",
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino",
     "etiquetas": [
       "guías",
       "floral",
@@ -100,8 +100,8 @@ const ARTICULOS = [
     "titulo": "Cómo probar perfumes sin saturar la nariz",
     "categoria": "Guías",
     "resumen": "Un método sencillo para descubrir fragancias en tienda y acertar más al elegir.",
-    "imagen": "../images/portada-04.svg",
-    "alt": "",
+    "imagen": "../images/editorial-probar.jpg",
+    "alt": "Una mano sostiene tiras de prueba junto a un vaporizador de perfume",
     "etiquetas": [
       "guías",
       "piel"
@@ -131,8 +131,8 @@ const ARTICULOS = [
     "titulo": "Duración, proyección y estela: no son lo mismo",
     "categoria": "Guías",
     "resumen": "Tres conceptos que se confunden mucho cuando hablamos del rendimiento de una fragancia.",
-    "imagen": "../images/portada-05.svg",
-    "alt": "",
+    "imagen": "../images/editorial-duracion.jpg",
+    "alt": "Una nube de perfume iluminada por un haz de luz junto al vaporizador",
     "etiquetas": [
       "guías",
       "piel"
@@ -162,8 +162,8 @@ const ARTICULOS = [
     "titulo": "Por qué un perfume cambia según la piel",
     "categoria": "Guías",
     "resumen": "La misma fragancia puede sentirse distinta en dos personas, y hay razones para ello.",
-    "imagen": "../images/portada-06.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piel.jpg",
+    "alt": "Una muñeca junto a un frasco de perfume sobre lino claro",
     "etiquetas": [
       "guías",
       "piel"
@@ -192,7 +192,7 @@ const ARTICULOS = [
     "titulo": "Cinco perfumes frescos para conocer estilos distintos",
     "categoria": "Selecciones",
     "resumen": "Del cítrico al acuático y al mineral: cinco formas reales de entender la frescura.",
-    "imagen": "../images/perfume-acqua-gio.svg",
+    "imagen": "../images/citrus.jpg",
     "etiquetas": [
       "selecciones",
       "cítrico",
@@ -217,14 +217,14 @@ const ARTICULOS = [
       }
     ],
     "url": "articulo-seleccion-frescos.html",
-    "alt": "Ilustración editorial de una fragancia para Cinco perfumes frescos para conocer estilos distintos"
+    "alt": "Un limón cortado sobre una superficie neutra"
   },
   {
     "id": "seleccion-vainillas",
     "titulo": "Vainilla en perfumes reales: tres maneras de contarla",
     "categoria": "Selecciones",
     "resumen": "Una misma nota puede ser balsámica, golosa o ahumada. Tres fragancias lo demuestran.",
-    "imagen": "../images/perfume-fireplace.svg",
+    "imagen": "../images/editorial-piramide.jpg",
     "etiquetas": [
       "selecciones",
       "dulce",
@@ -249,14 +249,14 @@ const ARTICULOS = [
       }
     ],
     "url": "articulo-seleccion-vainillas.html",
-    "alt": "Ilustración editorial de una fragancia para Vainilla en perfumes reales: tres maneras de contarla"
+    "alt": "Bergamota, flores blancas, rosa, madera y vainilla sobre piedra clara"
   },
   {
     "id": "seleccion-florales",
     "titulo": "Cuatro florales que no se parecen entre sí",
     "categoria": "Selecciones",
     "resumen": "Jazmín solar, flor de azahar, almizcle y fruta: una guía a florales con personalidad.",
-    "imagen": "../images/perfume-alien.svg",
+    "imagen": "../images/editorial-familias.jpg",
     "etiquetas": [
       "selecciones",
       "floral",
@@ -281,14 +281,14 @@ const ARTICULOS = [
       }
     ],
     "url": "articulo-seleccion-florales.html",
-    "alt": "Ilustración editorial de una fragancia para Cuatro florales que no se parecen entre sí"
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino"
   },
   {
     "id": "seleccion-maderas",
     "titulo": "De cedro a oud: cuatro perfumes para explorar las maderas",
     "categoria": "Selecciones",
     "resumen": "Aromas secos, especiados, minerales o ahumados en cuatro interpretaciones conocidas.",
-    "imagen": "../images/perfume-oud-wood.svg",
+    "imagen": "../images/wood.jpg",
     "etiquetas": [
       "selecciones",
       "amaderado",
@@ -313,7 +313,7 @@ const ARTICULOS = [
       }
     ],
     "url": "articulo-seleccion-maderas.html",
-    "alt": "Ilustración editorial de una fragancia para De cedro a oud: cuatro perfumes para explorar las maderas"
+    "alt": "Madera aromática y una rosa sobre una superficie neutra"
   },
   {
     "id": "conservar-perfumes",
@@ -321,8 +321,8 @@ const ARTICULOS = [
     "titulo": "Dónde guardar los perfumes para cuidarlos",
     "categoria": "Guías",
     "resumen": "Luz, calor y cambios de temperatura: los enemigos discretos de una fragancia.",
-    "imagen": "../images/portada-07.svg",
-    "alt": "",
+    "imagen": "../images/editorial-concentraciones.jpg",
+    "alt": "Tres frascos de laboratorio con líquido dorado y una pipeta de vidrio",
     "etiquetas": [
       "guías",
       "clásicos"
@@ -352,8 +352,8 @@ const ARTICULOS = [
     "titulo": "Tu primer perfume: una guía sin prisas",
     "categoria": "Guías",
     "resumen": "Cómo empezar una pequeña colección con criterio, sin perseguir cada lanzamiento.",
-    "imagen": "../images/portada-08.svg",
-    "alt": "",
+    "imagen": "../images/editorial-probar.jpg",
+    "alt": "Una mano sostiene tiras de prueba junto a un vaporizador de perfume",
     "etiquetas": [
       "guías",
       "clásicos"
@@ -383,8 +383,8 @@ const ARTICULOS = [
     "titulo": "La rosa tiene muchas voces",
     "categoria": "Ingredientes",
     "resumen": "De los pétalos frescos a los matices especiados: el universo de una nota clásica.",
-    "imagen": "../images/portada-09.svg",
-    "alt": "",
+    "imagen": "../images/editorial-familias.jpg",
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino",
     "etiquetas": [
       "floral",
       "ingredientes"
@@ -414,8 +414,8 @@ const ARTICULOS = [
     "titulo": "Vainilla: mucho más que un aroma dulce",
     "categoria": "Ingredientes",
     "resumen": "La faceta cálida, balsámica y envolvente de uno de los ingredientes más versátiles.",
-    "imagen": "../images/portada-10.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piramide.jpg",
+    "alt": "Bergamota, flores blancas, rosa, madera y vainilla sobre piedra clara",
     "etiquetas": [
       "dulce",
       "ingredientes"
@@ -445,8 +445,8 @@ const ARTICULOS = [
     "titulo": "Bergamota: el cítrico elegante",
     "categoria": "Ingredientes",
     "resumen": "Una fruta fundamental para muchas salidas frescas, desde colonias hasta perfumes complejos.",
-    "imagen": "../images/portada-11.svg",
-    "alt": "",
+    "imagen": "../images/citrus.jpg",
+    "alt": "Un limón cortado sobre una superficie neutra",
     "etiquetas": [
       "cítrico",
       "ingredientes"
@@ -476,8 +476,8 @@ const ARTICULOS = [
     "titulo": "Vetiver: el olor de la tierra después de la lluvia",
     "categoria": "Ingredientes",
     "resumen": "Raíces, madera y humo en una nota que puede ser seca, verde o sorprendentemente fresca.",
-    "imagen": "../images/portada-12.svg",
-    "alt": "",
+    "imagen": "../images/wood.jpg",
+    "alt": "Madera aromática y una rosa sobre una superficie neutra",
     "etiquetas": [
       "amaderado",
       "ingredientes"
@@ -507,8 +507,8 @@ const ARTICULOS = [
     "titulo": "Oud: una madera llena de contrastes",
     "categoria": "Ingredientes",
     "resumen": "Qué hay detrás de una de las materias aromáticas más comentadas de la perfumería.",
-    "imagen": "../images/portada-13.svg",
-    "alt": "",
+    "imagen": "../images/wood.jpg",
+    "alt": "Madera aromática y una rosa sobre una superficie neutra",
     "etiquetas": [
       "amaderado",
       "ingredientes"
@@ -538,8 +538,8 @@ const ARTICULOS = [
     "titulo": "Iris: el arte de lo empolvado",
     "categoria": "Ingredientes",
     "resumen": "Una nota refinada que puede recordar a maquillaje, raíces y tejidos suaves.",
-    "imagen": "../images/portada-14.svg",
-    "alt": "",
+    "imagen": "../images/editorial-familias.jpg",
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino",
     "etiquetas": [
       "floral",
       "ingredientes"
@@ -569,8 +569,8 @@ const ARTICULOS = [
     "titulo": "Neroli: la luz de la flor de azahar",
     "categoria": "Ingredientes",
     "resumen": "Una flor cítrica que combina frescura, delicadeza y un punto verde.",
-    "imagen": "../images/portada-15.svg",
-    "alt": "",
+    "imagen": "../images/citrus.jpg",
+    "alt": "Un limón cortado sobre una superficie neutra",
     "etiquetas": [
       "floral",
       "cítrico"
@@ -600,8 +600,8 @@ const ARTICULOS = [
     "titulo": "Almizcles: el perfume que casi parece piel",
     "categoria": "Ingredientes",
     "resumen": "De los matices limpios a los cálidos y sensuales, una familia más amplia de lo que parece.",
-    "imagen": "../images/portada-16.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piel.jpg",
+    "alt": "Una muñeca junto a un frasco de perfume sobre lino claro",
     "etiquetas": [
       "piel",
       "ingredientes"
@@ -631,8 +631,8 @@ const ARTICULOS = [
     "titulo": "Ámbar en perfumería: una idea, no una piedra",
     "categoria": "Ingredientes",
     "resumen": "El acorde cálido que combina resinas, vainilla y una sensación dorada.",
-    "imagen": "../images/portada-01.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piramide.jpg",
+    "alt": "Bergamota, flores blancas, rosa, madera y vainilla sobre piedra clara",
     "etiquetas": [
       "dulce",
       "notas"
@@ -662,8 +662,8 @@ const ARTICULOS = [
     "titulo": "El incienso y su lado contemplativo",
     "categoria": "Ingredientes",
     "resumen": "Resinas, humo y luz: las distintas caras de una nota con siglos de historia.",
-    "imagen": "../images/portada-02.svg",
-    "alt": "",
+    "imagen": "../images/wood.jpg",
+    "alt": "Madera aromática y una rosa sobre una superficie neutra",
     "etiquetas": [
       "amaderado",
       "historia"
@@ -693,8 +693,8 @@ const ARTICULOS = [
     "titulo": "Fougère: la familia que huele a tradición",
     "categoria": "Familias olfativas",
     "resumen": "Lavanda, hierbas y maderas en una de las estructuras más influyentes de la perfumería.",
-    "imagen": "../images/portada-03.svg",
-    "alt": "",
+    "imagen": "../images/editorial-probar.jpg",
+    "alt": "Una mano sostiene tiras de prueba junto a un vaporizador de perfume",
     "etiquetas": [
       "aromático",
       "clásicos"
@@ -724,8 +724,8 @@ const ARTICULOS = [
     "titulo": "Chipre: elegancia entre luces y sombras",
     "categoria": "Familias olfativas",
     "resumen": "Una arquitectura clásica de frescor inicial y profundidad musgosa.",
-    "imagen": "../images/portada-04.svg",
-    "alt": "",
+    "imagen": "../images/wood.jpg",
+    "alt": "Madera aromática y una rosa sobre una superficie neutra",
     "etiquetas": [
       "clásicos",
       "amaderado"
@@ -755,8 +755,8 @@ const ARTICULOS = [
     "titulo": "Perfumes gourmand: cuando el aroma abre el apetito",
     "categoria": "Familias olfativas",
     "resumen": "Café, cacao, vainilla y caramelo pueden ser mucho más que un postre en forma de perfume.",
-    "imagen": "../images/portada-05.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piramide.jpg",
+    "alt": "Bergamota, flores blancas, rosa, madera y vainilla sobre piedra clara",
     "etiquetas": [
       "dulce",
       "notas"
@@ -786,8 +786,8 @@ const ARTICULOS = [
     "titulo": "Un viaje breve por la historia del perfume",
     "categoria": "Historia",
     "resumen": "Del uso ritual de materias aromáticas a la perfumería creativa actual.",
-    "imagen": "../images/portada-06.svg",
-    "alt": "",
+    "imagen": "../images/editorial-probar.jpg",
+    "alt": "Una mano sostiene tiras de prueba junto a un vaporizador de perfume",
     "etiquetas": [
       "historia",
       "clásicos"
@@ -817,8 +817,8 @@ const ARTICULOS = [
     "titulo": "Grasse y el paisaje de la perfumería",
     "categoria": "Historia",
     "resumen": "Una ciudad francesa relacionada con las flores, la extracción y el oficio perfumista.",
-    "imagen": "../images/portada-07.svg",
-    "alt": "",
+    "imagen": "../images/editorial-familias.jpg",
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino",
     "etiquetas": [
       "historia",
       "floral"
@@ -848,8 +848,8 @@ const ARTICULOS = [
     "titulo": "Por qué un olor puede devolverte a otro tiempo",
     "categoria": "Cultura",
     "resumen": "La memoria olfativa enlaza aromas con lugares, personas y emociones de una manera especial.",
-    "imagen": "../images/portada-08.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piel.jpg",
+    "alt": "Una muñeca junto a un frasco de perfume sobre lino claro",
     "etiquetas": [
       "piel",
       "historia"
@@ -879,8 +879,8 @@ const ARTICULOS = [
     "titulo": "Cómo se imagina y se construye un perfume",
     "categoria": "Cultura",
     "resumen": "Del primer concepto a las pruebas sobre papel y piel: el proceso creativo detrás de una fragancia.",
-    "imagen": "../images/portada-09.svg",
-    "alt": "",
+    "imagen": "../images/editorial-concentraciones.jpg",
+    "alt": "Tres frascos de laboratorio con líquido dorado y una pipeta de vidrio",
     "etiquetas": [
       "notas",
       "clásicos"
@@ -910,8 +910,8 @@ const ARTICULOS = [
     "titulo": "Perfumería y sostenibilidad: preguntas útiles",
     "categoria": "Cultura",
     "resumen": "Materias naturales, síntesis, envases y trazabilidad: una mirada sin eslóganes.",
-    "imagen": "../images/portada-10.svg",
-    "alt": "",
+    "imagen": "../images/editorial-probar.jpg",
+    "alt": "Una mano sostiene tiras de prueba junto a un vaporizador de perfume",
     "etiquetas": [
       "ingredientes",
       "historia"
@@ -941,8 +941,8 @@ const ARTICULOS = [
     "titulo": "Layering: combinar perfumes con intención",
     "categoria": "Guías",
     "resumen": "Cómo superponer fragancias sin convertir la mezcla en un ruido de olores.",
-    "imagen": "../images/portada-11.svg",
-    "alt": "",
+    "imagen": "../images/editorial-concentraciones.jpg",
+    "alt": "Tres frascos de laboratorio con líquido dorado y una pipeta de vidrio",
     "etiquetas": [
       "guías",
       "notas"
@@ -972,8 +972,8 @@ const ARTICULOS = [
     "titulo": "¿Puede un perfume tener género?",
     "categoria": "Cultura",
     "resumen": "Una mirada a las etiquetas masculinas, femeninas y unisex en la perfumería.",
-    "imagen": "../images/portada-12.svg",
-    "alt": "",
+    "imagen": "../images/editorial-piel.jpg",
+    "alt": "Una muñeca junto a un frasco de perfume sobre lino claro",
     "etiquetas": [
       "clásicos",
       "notas"
@@ -1031,7 +1031,7 @@ const ARTICULOS = [
     "categoria": "Guías",
     "resumen": "Una introducción sencilla a las notas luminosas de limón, naranja y bergamota.",
     "imagen": "../images/citrus.jpg",
-    "alt": "Medio limón con la pulpa visible sobre un fondo neutro",
+    "alt": "Un limón cortado sobre una superficie neutra",
     "etiquetas": [
       "cítrico",
       "fresco"
@@ -1057,8 +1057,8 @@ const ARTICULOS = [
     "titulo": "Sándalo y rosa: un diálogo de aromas",
     "categoria": "Cultura",
     "resumen": "Dos ingredientes que combinan la suavidad de la madera con el carácter de una flor.",
-    "imagen": "../images/wood.jpg",
-    "alt": "Piezas de madera clara junto a una rosa seca",
+    "imagen": "../images/editorial-familias.jpg",
+    "alt": "Rosa, cítricos, flores blancas y madera dispuestos sobre lino",
     "etiquetas": [
       "amaderado",
       "floral"
