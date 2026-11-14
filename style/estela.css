@@ -1,0 +1,740 @@
+/* Ajustes base para la versión HTML sin Tailwind. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+/**
+ * estela.css - Hoja de estilos de Estela, revista digital de perfumes.
+ *
+ * - El tema (claro/oscuro/sepia) y el tamaño de letra se controlan con clases del <body>
+ *   (tema-*, fuente-*) que cambian las variables de color y --font-scale.
+ * - Todos los tamaños de texto dependen de --font-scale para que el selector de tamaño
+ *   afecte a toda la web; ninguno baja de 0.75rem.
+ * - Diseño adaptable: rejillas con grid y un punto de corte a 760px.
+ */
+/* ===== TEMAS Y VARIABLES: colores y tamaño de letra (claro, oscuro y sepia) ===== */
+.estela {
+  --font-scale: 1;
+  font-size: max(0.75rem, calc(1rem * var(--font-scale)));
+  --paper: #faf9f6;
+  --ink: #292621;
+  --muted: #645e57;
+  --line: #d7d1c9;
+  --soft: #f0ede7;
+  --accent: #8c4c37;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+}
+.estela.fuente-pequeño {
+  --font-scale: 0.8;
+}
+.estela.fuente-grande {
+  --font-scale: 1.25;
+}
+.estela :is(button, input, textarea, select) {
+  font: inherit;
+}
+.estela.tema-oscuro {
+  --paper: #252320;
+  --ink: #f6f3ed;
+  --muted: #d2c9bd;
+  --line: #716b62;
+  --soft: #37332f;
+  --accent: #ffbf9e;
+}
+.estela.tema-sepia {
+  --paper: #f1e7d2;
+  --ink: #392d22;
+  --muted: #665440;
+  --line: #b5a183;
+  --soft: #e8dcc4;
+  --accent: #864a34;
+}
+/* ===== BASE: enlaces, botones y foco visible (accesibilidad) ===== */
+.estela a {
+  color: inherit;
+  text-decoration: none;
+}
+.estela button {
+  cursor: pointer;
+}
+.estela button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.estela :focus-visible {
+  outline: 3px solid #b75d3f;
+  outline-offset: 3px;
+}
+/* ===== ENLACE PARA SALTAR AL CONTENIDO ===== */
+.e-skip {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  background: var(--paper);
+  padding: 0.7rem;
+  z-index: 100;
+}
+.e-skip:focus {
+  top: 1rem;
+}
+/* ===== CABECERA Y NAVEGACIÓN ===== */
+.e-header {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1.5rem clamp(1.25rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.e-logo {
+  font-family: Newsreader, Georgia, serif;
+  letter-spacing: 0.28em;
+  font-size: max(0.75rem, calc(1.55rem * var(--font-scale)));
+}
+.e-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.9rem, 3vw, 2.5rem);
+  align-items: center;
+  font-size: max(0.75rem, calc(0.9rem * var(--font-scale)));
+}
+.e-header nav a[aria-current="page"] {
+  border-bottom: 1px solid;
+  padding-bottom: 0.3rem;
+}
+.e-header nav span {
+  font-size: max(0.75rem, calc(0.75rem * var(--font-scale)));
+}
+/* ===== PORTADA, SECCIONES Y TIPOGRAFÍA ===== */
+.e-hero,
+.e-section {
+  max-width: 1350px;
+  margin: auto;
+  padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1.25rem, 5vw, 4.5rem);
+}
+.e-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+.e-hero img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.estela h1,
+.estela h2,
+.estela h3 {
+  font-family: Newsreader, Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+.estela h1 {
+  font-size: max(0.75rem, calc(clamp(2.7rem, 5vw, 5rem) * var(--font-scale)));
+  margin: 0.8rem 0 1.2rem;
+}
+.estela h2 {
+  font-size: max(0.75rem, calc(clamp(2rem, 3vw, 3rem) * var(--font-scale)));
+}
+.e-hero p:not(.e-kicker),
+.e-lead {
+  color: var(--muted);
+  font-size: max(0.75rem, calc(1.1rem * var(--font-scale)));
+  line-height: 1.7;
+  max-width: 35rem;
+}
+.e-kicker {
+  font-family: "Instrument Sans", sans-serif;
+  color: var(--accent);
+  font-size: max(0.75rem, calc(0.72rem * var(--font-scale)));
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* ===== BOTONES ===== */
+.e-primary,
+.e-outline {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 1.3rem;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  font-size: max(0.75rem, calc(0.88rem * var(--font-scale)));
+}
+.e-primary {
+  background: var(--ink);
+  color: var(--paper) !important;
+}
+.e-outline {
+  background: transparent;
+  color: var(--ink);
+}
+/* ===== TARJETAS DE ARTÍCULO Y REJILLA ===== */
+.e-section-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.e-section-title h2,
+.e-index h2 {
+  margin: 0.5rem 0;
+}
+.e-section-title > a {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.e-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+.e-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.e-card :is(h2, h3) {
+  font-size: max(0.75rem, calc(1.65rem * var(--font-scale)));
+  margin: 0.8rem 0;
+}
+.e-card p:not(.e-kicker) {
+  line-height: 1.6;
+  color: var(--muted);
+}
+.e-card a:hover :is(h2, h3) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.e-textbtn {
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+/* ===== ÍNDICE DE ARTÍCULOS (INICIO) ===== */
+.e-index {
+  border-top: 1px solid var(--line);
+}
+.e-index ol {
+  list-style: decimal-leading-zero;
+  padding-left: 1.8rem;
+  max-width: 800px;
+}
+.e-index li {
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+}
+.e-index li a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.e-index li span {
+  float: right;
+  color: var(--muted);
+  font-size: max(0.75rem, calc(0.8rem * var(--font-scale)));
+}
+/* ===== BUSCADOR, FILTROS Y ESTADOS VACÍOS ===== */
+.e-label,
+.e-comments label {
+  display: block;
+  font-weight: 600;
+  margin: 2rem 0 0.6rem;
+}
+.e-search {
+  display: flex;
+  max-width: 750px;
+  border: 1px solid var(--muted);
+  border-radius: 0.3rem;
+}
+.e-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+}
+.e-search button {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  padding: 0 1rem;
+  text-decoration: underline;
+}
+.e-filters,
+.e-tools fieldset {
+  border: 0;
+  padding: 0;
+  margin: 1.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.e-filters legend,
+.e-tools legend {
+  font-weight: 600;
+  font-size: max(0.75rem, calc(0.85rem * var(--font-scale)));
+  margin-bottom: 0.7rem;
+}
+.e-filters button,
+.e-tools button,
+.e-tags a {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--muted);
+  padding: 0.6rem 0.95rem;
+  border-radius: 99px;
+}
+.e-tags a {
+  display: inline-block;
+}
+.e-filters button.active,
+.e-tools button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.e-count {
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 0;
+  color: var(--muted);
+}
+.e-empty {
+  padding: 4rem 0;
+}
+.e-empty p,
+.e-section > p:not(.e-kicker) {
+  color: var(--muted);
+}
+/* ===== BARRA DE PROGRESO DE LECTURA ===== */
+.e-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--line);
+  z-index: 20;
+}
+.e-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+/* ===== PÁGINA DE ARTÍCULO: cabecera, imagen, índice y cuerpo ===== */
+.e-reading {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem clamp(1.25rem, 5vw, 4rem) 5rem;
+}
+.e-article-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.e-article-top > a {
+  text-decoration: underline;
+  margin-top: 1rem;
+}
+/* ===== AJUSTES DE TEMA Y TAMAÑO DE LETRA ===== */
+.e-preferences {
+  max-width: 1440px;
+  margin: auto;
+  padding: 1.25rem clamp(1.25rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--line);
+}
+.e-preferences .e-tools {
+  justify-content: flex-end;
+}
+.e-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.e-tools fieldset {
+  min-width: 0;
+  margin: 0;
+}
+.e-tools button {
+  min-height: 44px;
+  text-transform: capitalize;
+  font-size: max(0.75rem, calc(0.8rem * var(--font-scale)));
+}
+.e-article-header {
+  max-width: 850px;
+  margin: 4rem auto 2rem;
+}
+.e-article-header h1 {
+  font-size: max(0.75rem, calc(clamp(2.8rem, 5vw, 4.7rem) * var(--font-scale)));
+}
+.e-meta {
+  border-block: 1px solid var(--line);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: max(0.75rem, calc(0.9rem * var(--font-scale)));
+}
+.e-meta button {
+  margin: 0;
+}
+.e-article-img {
+  max-width: 850px;
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  margin: auto;
+  display: block;
+}
+.e-article-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 680px);
+  gap: 4rem;
+  margin: 4rem auto 0;
+  justify-content: center;
+}
+.e-toc {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  font-size: max(0.75rem, calc(0.9rem * var(--font-scale)));
+}
+.e-toc ol {
+  padding-left: 1.3rem;
+  line-height: 2;
+}
+.e-toc a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.e-body {
+  font-family: Newsreader, Georgia, serif;
+  font-size: max(0.75rem, calc(1.25rem * var(--font-scale)));
+  line-height: 1.75;
+}
+.e-body section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 2rem;
+}
+.e-body h2 {
+  font-size: 1.65em;
+  margin-bottom: 1rem;
+}
+/* ===== ETIQUETAS Y COMENTARIOS ===== */
+.e-tags {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.e-comments {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+.e-comments > p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.e-comments textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--muted);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+.e-comments .e-primary {
+  cursor: pointer;
+}
+.e-comment {
+  padding: 1rem;
+  border-bottom: 1px solid var(--line);
+  white-space: pre-wrap;
+}
+/* ===== PIE DE PÁGINA Y RESALTADO DE BÚSQUEDA ===== */
+.e-footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem clamp(1.25rem, 5vw, 4.5rem);
+  color: var(--muted);
+  font-size: max(0.75rem, calc(0.85rem * var(--font-scale)));
+}
+.e-footer .e-logo {
+  color: var(--ink);
+}
+.estela mark {
+  background: #f5d789;
+  color: #30251c;
+}
+/* ===== RESPONSIVE: móvil y tablet pequeña ===== */
+@media (max-width: 760px) {
+  .e-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .e-header nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .e-hero {
+    grid-template-columns: 1fr;
+  }
+  .e-hero img {
+    aspect-ratio: 16/10;
+  }
+  .e-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .e-card img {
+    aspect-ratio: 16/10;
+  }
+  .e-article-top {
+    flex-direction: column;
+  }
+  .e-tools {
+    gap: 1rem;
+  }
+  .e-article-header {
+    margin: 2.5rem auto 2rem;
+  }
+  .e-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .e-article-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .e-toc {
+    position: static;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1rem;
+  }
+  .e-index li span {
+    float: none;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .e-section-title {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 760px) {
+  .e-preferences .e-tools {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== UTILIDADES ===== */
+/* Los elementos con el atributo hidden deben ocultarse aunque tengan display propio (p. ej. grid) */
+[hidden] {
+  display: none !important;
+}
+/* Desplazamiento suave al pulsar el índice, salvo si la persona prefiere menos movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===== ESTELA V2 · UNA SOLA CABECERA ===== */
+.e-header {
+  position: relative;
+  max-width: 1350px;
+  padding-block: 1.05rem;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  z-index: 30;
+}
+.e-header > .e-logo { margin-right: auto; }
+.e-header nav { flex-wrap: wrap; gap: clamp(0.8rem, 2.5vw, 2.2rem); }
+.e-appearance { position: relative; flex: 0 0 auto; }
+.e-appearance summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .65rem .95rem;
+  font-size: max(.76rem, calc(.82rem * var(--font-scale)));
+  background: var(--paper);
+  transition: background .15s ease;
+}
+.e-appearance summary::-webkit-details-marker { display: none; }
+.e-appearance summary:hover, .e-appearance[open] summary { background: var(--soft); }
+.e-appearance-icon { font-family: Newsreader, Georgia, serif; font-size: max(.75rem, calc(1.1rem * var(--font-scale))); line-height: 1; }
+.e-appearance-panel {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 80;
+  top: calc(100% + .65rem);
+  right: 0;
+  width: min(356px, calc(100vw - 2.5rem));
+  padding: 1.3rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 16px 42px #1b1b1b18;
+}
+.e-appearance-title {
+  margin: 0 0 1.3rem;
+  font-family: Newsreader, Georgia, serif;
+  font-size: max(.75rem, calc(1.35rem * var(--font-scale)));
+}
+.e-appearance .e-tools { display: block; }
+.e-appearance .e-tools fieldset { display: block; margin: 0 0 1.2rem; }
+.e-appearance .e-tools fieldset:last-child { margin-bottom: 0; }
+.e-appearance .e-tools legend { margin-bottom: .7rem; }
+.e-appearance .e-tools button {
+  min-height: 38px;
+  padding: .55rem .75rem;
+  margin-right: .25rem;
+  margin-bottom: .25rem;
+  font-size: max(.75rem, calc(.8rem * var(--font-scale)));
+}
+/* Una portada serena: catálogo amplio únicamente en Explorar. */
+.e-hero { padding-top: clamp(2.8rem, 6vw, 5.5rem); padding-bottom: clamp(2.8rem, 6vw, 5.5rem); }
+.e-hero img, .e-card img, .e-article-img { background: var(--soft); }
+.e-card img { transition: transform .3s ease; }
+.e-card a:hover img { transform: scale(1.015); }
+.e-grid { gap: 2.4rem 1.8rem; }
+.e-card p:not(.e-kicker) { font-size: max(.78rem, calc(.89rem * var(--font-scale))); }
+.e-topic-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin: 1.25rem 0 2.4rem; }
+.e-topic-links a { padding: 1.4rem 1.1rem; border: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; font-family: Newsreader, Georgia, serif; font-size: max(1.2rem, calc(1.45rem * var(--font-scale))); }
+.e-topic-links a:hover { background: var(--soft); }
+.e-index-details { max-width: 850px; border-top: 1px solid var(--line); padding-top: 1.3rem; }
+.e-index-details summary { cursor: pointer; font-size: max(.75rem, calc(.89rem * var(--font-scale))); text-decoration: underline; text-underline-offset: .22em; }
+.e-index-details[open] summary { margin-bottom: 1rem; }
+.e-index-details li { padding: .85rem 0; }
+.e-index-details li a { text-decoration: none; }
+.e-index-details li a:hover { text-decoration: underline; }
+.e-load-wrap { display: flex; justify-content: center; padding: 1.25rem 0 0; }
+.e-load-wrap button { margin-top: 1.7rem; }
+.e-explore .e-filters { gap: .45rem; }
+.e-explore .e-filters button { padding: .48rem .8rem; font-size: max(.75rem, calc(.79rem * var(--font-scale))); }
+@media(max-width:760px) {
+  .e-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: .9rem;
+    gap: .9rem 1rem;
+  }
+  .e-header > .e-logo { grid-column: 1; grid-row: 1; }
+  .e-header > .e-appearance { grid-column: 2; grid-row: 1; justify-self: end; }
+  .e-header > nav { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: flex-start; gap: clamp(1rem, 5vw, 2rem); }
+  .e-appearance-label { display: none; }
+  .e-appearance summary { min-width: 44px; min-height: 44px; padding: .6rem; }
+  .e-topic-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .e-topic-links a { padding: 1rem; }
+}
+@media(max-width:420px) {
+  .e-header > nav { font-size: max(.75rem, calc(.82rem * var(--font-scale))); gap: .8rem; }
+  .e-header nav span { font-size: max(.75rem, calc(.72rem * var(--font-scale))); }
+  .e-topic-links { gap: .5rem; }
+  .e-topic-links a { font-size: max(.75rem, calc(1.15rem * var(--font-scale))); }
+}
+
+/* ===== ESTELA V3 · PERFUMES REALES COMO CONTENIDO EDITORIAL ===== */
+.e-section-intro { max-width: 49rem; line-height: 1.7; color: var(--muted); }
+.e-perfume-preview { border-top: 1px solid var(--line); }
+.e-perfume-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem 1.8rem;margin-top:2rem; }
+.e-perfume-card { min-width:0; }
+.e-perfume-card img { width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--soft);display:block; }
+.e-perfume-card .e-kicker { margin-top:1.25rem;margin-bottom:.25rem; }
+.e-perfume-card :is(h2, h3) { font-size:max(1.4rem,calc(1.8rem * var(--font-scale)));margin:.4rem 0; }
+.e-perfume-card a:hover :is(h2, h3), .e-perfume-more:hover { text-decoration:underline;text-underline-offset:.18em; }
+.e-perfume-sub { font-size:max(.78rem,calc(.87rem * var(--font-scale)));color:var(--muted);margin:.35rem 0; }
+.e-perfume-summary { line-height:1.6;color:var(--muted);font-size:max(.8rem,calc(.9rem * var(--font-scale))); }
+.e-perfume-notas { font-size:max(.76rem,calc(.82rem * var(--font-scale)));line-height:1.55;color:var(--muted);margin:1rem 0; }
+.e-perfume-more { display:inline-block;text-underline-offset:.2em;border-bottom:1px solid var(--ink);padding-bottom:.25rem;margin-top:.1rem;font-size:max(.76rem,calc(.9rem * var(--font-scale))); }
+.e-illustration-disclaimer,.e-muted { color:var(--muted);line-height:1.65;font-size:max(.76rem,calc(.89rem * var(--font-scale))); }
+.e-illustration-disclaimer { margin-top:3rem; }
+.e-perfume-filters button { font-size:max(.75rem,calc(.79rem * var(--font-scale)));padding:.48rem .8rem; }
+.e-perfumes-page > p:not(.e-kicker) { max-width:44rem;line-height:1.7; }
+.e-back { display:inline-block;border-bottom:1px solid var(--line);padding-bottom:.3rem;margin-bottom:2.25rem;font-size: max(.75rem, calc(.9rem * var(--font-scale))); }
+.e-perfume-hero { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(2rem,5vw,5rem); }
+.e-perfume-hero img { width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--soft); }
+.e-perfume-name { margin:.6rem 0 1rem !important; }
+.e-perfume-intro { max-width:36rem;line-height:1.75;font-size:max(1rem,calc(1.08rem * var(--font-scale)));color:var(--muted); }
+.e-perfume-type { font-size:max(.81rem,calc(.95rem * var(--font-scale)));color:var(--muted); }
+.e-perfume-attributes { display:grid;grid-template-columns:9rem minmax(0,1fr);gap:.8rem 1rem;border-top:1px solid var(--line);padding-top:1.5rem;margin-top:2rem;font-size:max(.8rem,calc(.88rem * var(--font-scale))); }
+.e-perfume-attributes dt { font-weight:600; }
+.e-perfume-attributes dd { margin:0;color:var(--muted); }
+.e-perfume-body { margin:clamp(3rem,7vw,6rem) auto;max-width:990px;display:grid;grid-template-columns: minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem); }
+.e-perfume-body h2,.e-perfume-related h2 { font-size:max(1.8rem,calc(2.4rem * var(--font-scale)));margin:.3rem 0 1.3rem; }
+.e-perfume-review p { line-height:1.8;color:var(--muted); }
+.e-perfume-review h3 { font-size: max(.75rem, calc(1.4rem * var(--font-scale)));margin:2rem 0 0; }
+.e-note-list { list-style:none;padding:0;margin:1.6rem 0; }
+.e-note-list li { border-bottom:1px solid var(--line);padding:1rem 0;font-family:Newsreader,Georgia,serif;font-size:max(1.1rem,calc(1.35rem * var(--font-scale))); }
+.e-perfume-source { font-size:max(.76rem,calc(.83rem * var(--font-scale)));border-top:1px solid var(--line);padding-top:1.5rem; }
+.e-perfume-source a { text-decoration:underline;text-underline-offset:.2em; }
+.e-perfume-related { border-top:1px solid var(--line);padding:3rem 0;margin:3rem 0; }
+.e-related-list { list-style:none;padding:0;margin:1.5rem 0 0; }
+.e-related-list li { border-bottom:1px solid var(--line);padding:.9rem 0;display:flex;gap:1rem;justify-content:space-between;align-items:baseline; }
+.e-related-list a { text-decoration:underline;text-underline-offset:.2em; }
+.e-related-list span { font-size:max(.74rem,calc(.8rem * var(--font-scale)));color:var(--muted);text-align:right; }
+.e-inline-perfumes { padding:2rem 0;margin:2rem 0;border-top:1px solid var(--line); }
+.e-inline-perfumes h2 { margin:.45rem 0 1rem;font-size:max(1.75rem,calc(2.1rem * var(--font-scale))); }
+.e-inline-perfumes .e-related-list li { font-size:max(.8rem,calc(.9rem * var(--font-scale))); }
+@media(max-width:760px){
+  .e-perfume-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1rem; }
+  .e-perfume-hero,.e-perfume-body {grid-template-columns:1fr;}
+  .e-perfume-hero {gap:1.8rem;}
+  .e-perfume-detail {padding-top:2rem;}
+  .e-perfume-body {gap:2rem;}
+  .e-perfume-attributes {grid-template-columns:8rem minmax(0,1fr);}
+}
+@media(max-width:490px){
+  .e-perfume-grid {grid-template-columns:1fr;gap:2rem;}
+  .e-header > nav {gap:clamp(.55rem,2.9vw,1.1rem);font-size: max(.75rem, calc(.82rem * var(--font-scale)));}
+  .e-header nav span {font-size: max(.75rem, calc(.7rem * var(--font-scale)));}
+  .e-related-list li {align-items:start;flex-direction:column;gap:.35rem;}
+  .e-related-list span {text-align:left;}
+}
+
+/* Identidad propia y accesibilidad de la versión final. */
+.e-logo { display: inline-flex; align-items: center; gap: .6rem; flex-shrink: 0; }
+.e-brand-mark { width: 2.6rem; height: 2.6rem; padding: .25rem; object-fit: contain; background: #faf9f6; border-radius: 50%; }
+.e-hero img, .e-card img { height: auto; display: block; }
+.e-article-img { height: auto; }
+.e-hero > *, .e-article-layout > *, .e-header nav { min-width: 0; }
+.e-header > nav { flex-wrap: wrap; }
+.e-appearance summary, .e-appearance-panel, .e-search, .e-filters button, .e-tools button, .e-comments textarea { border-color: var(--muted); }
+.e-appearance .e-tools button { min-height: 44px; }
+.e-search-match { padding: .6rem .8rem; border-left: 2px solid var(--accent); }
+@media (prefers-reduced-motion: reduce) { .e-card img { transition: none; } .e-card a:hover img { transform: none; } }
+
+.estela .e-appearance-title { margin: 0 0 1.3rem; font-size: max(.75rem, calc(1.35rem * var(--font-scale))); }
+
+/* Revisión de accesibilidad y fotografías de producto · 14/11/2026. */
+.estela :focus-visible { outline-color: var(--accent); }
+.estela.tema-oscuro { color-scheme: dark; }
+.estela.tema-claro, .estela.tema-sepia { color-scheme: light; }
+.e-comment, .e-perfume-attributes dd { overflow-wrap: anywhere; }
+.e-header nav a { padding-block: .3rem; }
+.e-appearance-panel { max-height: min(75vh, calc(100dvh - 6rem)); overflow-y: auto; overscroll-behavior: contain; }
+.e-perfume-card img, .e-perfume-hero img { object-fit: contain; padding: 1rem; background: #fff; }

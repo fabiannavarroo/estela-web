@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estela: revista digital de perfumes, ingredientes y cultura olfativa">
+<title>Estela — Revista digital de perfumes</title>
+<link rel="icon" href="../images/estela-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Newsreader:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/estela.css">
+</head>
+<body class="estela tema-claro fuente-mediano" data-pagina="inicio">
+<!-- Enlace para saltar la cabecera (teclado y lectores de pantalla) -->
+<a class="e-skip" href="#contenido">Saltar al contenido</a>
+
+<!-- Cabecera y navegación principal -->
+<header class="e-header">
+  <a class="e-logo" href="index.html" aria-label="Estela, inicio"><span>ESTELA</span></a>
+  <nav aria-label="Navegación principal">
+    <a href="index.html" aria-current="page">Inicio</a>
+    <a href="explorar.html">Explorar</a>
+    <a href="perfumes.html">Perfumes</a>
+    <a href="guardados.html">Guardados <span id="contador-guardados">(0)</span></a>
+  </nav>
+
+  <details class="e-appearance">
+    <summary aria-label="Ajustes de apariencia"><span class="e-appearance-icon" aria-hidden="true">Aa</span><span class="e-appearance-label">Apariencia</span></summary>
+    <div class="e-appearance-panel">
+      <h2 class="e-appearance-title">Personaliza la lectura</h2>
+      <div class="e-tools">
+        <fieldset>
+          <legend>Tema</legend>
+          <button type="button" data-tema="claro" aria-pressed="true" aria-label="Tema claro">Claro</button>
+          <button type="button" data-tema="oscuro" aria-pressed="false" aria-label="Tema oscuro">Oscuro</button>
+          <button type="button" data-tema="sepia" aria-pressed="false" aria-label="Tema sepia">Sepia</button>
+        </fieldset>
+        <fieldset>
+          <legend>Tamaño del texto</legend>
+          <button type="button" data-tamano="pequeño" aria-pressed="false" aria-label="Tamaño pequeño">Pequeño</button>
+          <button type="button" data-tamano="mediano" aria-pressed="true" aria-label="Tamaño mediano">Mediano</button>
+          <button type="button" data-tamano="grande" aria-pressed="false" aria-label="Tamaño grande">Grande</button>
+        </fieldset>
+      </div>
+    </div>
+  </details>
+</header>
+
+
+
+<main id="contenido" tabindex="-1">
+  <!-- Portada -->
+  <section class="e-hero">
+    <img src="../images/citrus.jpg" alt="Un limón fresco cortado sobre una superficie neutra" width="1024" height="768">
+    <div>
+      <p class="e-kicker">REVISTA DE PERFUMERÍA</p>
+      <h1>Descubrir un aroma es descubrir una historia</h1>
+      <p>Guías, ingredientes e historias para explorar la perfumería a tu ritmo.</p>
+      <a class="e-primary" href="explorar.html">Explorar artículos <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- Tarjetas de artículos (las genera estela.js a partir de datos.js) -->
+  <section class="e-section" aria-labelledby="t-ultimos">
+    <div class="e-section-title">
+      <div>
+        <p class="e-kicker">SELECCIÓN EDITORIAL</p>
+        <h2 id="t-ultimos">Lecturas destacadas</h2>
+      </div>
+      <a href="explorar.html">Ver todos →</a>
+    </div>
+    <div class="e-grid" id="rejilla"></div>
+    <noscript><p>Esta sección necesita JavaScript activado para mostrar los artículos.</p></noscript>
+  </section>
+
+
+  <!-- Selección de fragancias reales: el catálogo completo tiene su propia página. -->
+  <section class="e-section e-perfume-preview" aria-labelledby="t-perfumes">
+    <div class="e-section-title"><div><p class="e-kicker">FRAGANCIAS REALES, MIRADA EDITORIAL</p>
+      <h2 id="t-perfumes">Perfumes para descubrir</h2></div><a href="perfumes.html">Ver los 12 perfumes →</a></div>
+    <p class="e-section-intro">Una pequeña selección de fragancias conocidas para ponerle nombre a los acordes que aparecen en los artículos. Sin precios ni compras: solo historias y criterio olfativo.</p>
+    <div id="destacados-perfumes" class="e-perfume-grid" aria-live="polite"></div>
+  </section>
+
+  <!-- Índice automático de artículos (lo genera estela.js) -->
+  <section class="e-section e-index" aria-labelledby="t-indice">
+    <div class="e-section-title">
+      <div>
+        <p class="e-kicker">PARA SEGUIR DESCUBRIENDO</p>
+        <h2 id="t-indice">Un universo de aromas</h2>
+      </div>
+      <a href="explorar.html">Explorar la revista →</a>
+    </div>
+    <nav class="e-topic-links" aria-label="Explorar por temas">
+      <a href="explorar.html?etiqueta=floral">Flores <span aria-hidden="true">↗</span></a>
+      <a href="explorar.html?etiqueta=amaderado">Maderas <span aria-hidden="true">↗</span></a>
+      <a href="explorar.html?etiqueta=c%C3%ADtrico">Cítricos <span aria-hidden="true">↗</span></a>
+      <a href="perfumes.html">Perfumes <span aria-hidden="true">↗</span></a>
+    </nav>
+    <details class="e-index-details">
+      <summary>Ver el índice completo de artículos</summary>
+      <ol id="indice"></ol>
+    </details>
+  </section>
+</main>
+
+<footer class="e-footer">
+  <a class="e-logo" href="index.html"><span>ESTELA</span></a>
+  <p>Una revista para descubrir la cultura del perfume.</p>
+  <p>Proyecto académico · Revista de demostración</p>
+</footer>
+
+<script src="../script/datos.js"></script>
+<script src="../script/perfumes.js"></script>
+<script src="../script/estela.js"></script>
+<script src="../script/perfumes-ui.js"></script>
+</body>
+</html>

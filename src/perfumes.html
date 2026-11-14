@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Selección editorial de doce perfumes reales. Busca por notas, marca y familia olfativa." name="description">
+<title>Perfumes reales recomendados — ESTELA</title>
+<link href="../images/estela-icono.png" rel="icon">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Newsreader:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="../style/estela.css" rel="stylesheet">
+</head>
+<body class="estela tema-claro fuente-mediano" data-pagina="perfumes">
+<!-- Enlace para saltar la cabecera (teclado y lectores de pantalla) -->
+<a class="e-skip" href="#contenido">Saltar al contenido</a>
+<!-- Cabecera y navegación principal -->
+<header class="e-header">
+<a aria-label="Estela, inicio" class="e-logo" href="index.html"><span>ESTELA</span></a>
+<nav aria-label="Navegación principal">
+<a href="index.html">Inicio</a>
+<a href="explorar.html">Explorar</a>
+<a aria-current="page" href="perfumes.html">Perfumes</a>
+<a href="guardados.html">Guardados <span id="contador-guardados">(0)</span></a>
+</nav>
+<details class="e-appearance">
+<summary aria-label="Ajustes de apariencia"><span aria-hidden="true" class="e-appearance-icon">Aa</span><span class="e-appearance-label">Apariencia</span></summary>
+<div class="e-appearance-panel">
+<h2 class="e-appearance-title">Personaliza la lectura</h2>
+<div class="e-tools">
+<fieldset>
+<legend>Tema</legend>
+<button aria-pressed="true" data-tema="claro" type="button" aria-label="Tema claro">Claro</button>
+<button aria-pressed="false" data-tema="oscuro" type="button" aria-label="Tema oscuro">Oscuro</button>
+<button aria-pressed="false" data-tema="sepia" type="button" aria-label="Tema sepia">Sepia</button>
+</fieldset>
+<fieldset>
+<legend>Tamaño del texto</legend>
+<button aria-pressed="false" data-tamano="pequeño" type="button" aria-label="Tamaño pequeño">Pequeño</button>
+<button aria-pressed="true" data-tamano="mediano" type="button" aria-label="Tamaño mediano">Mediano</button>
+<button aria-pressed="false" data-tamano="grande" type="button" aria-label="Tamaño grande">Grande</button>
+</fieldset>
+</div>
+</div>
+</details>
+</header>
+<main id="contenido" tabindex="-1"><section aria-labelledby="lista-perfumes" class="e-section e-explore e-perfumes-page">
+<p class="e-kicker">ARCHIVO OLFATIVO</p>
+<h1 id="lista-perfumes">Descubre perfumes</h1>
+<p>Fragancias reales para conectar ingredientes, acordes e historias. Selección editorial independiente, sin precios ni enlaces de compra.</p>
+<form id="form-perfumes" role="search"><label class="e-label" for="buscar-perfumes">Buscar un perfume</label>
+<div class="e-search"><input autocomplete="off" id="buscar-perfumes" placeholder="Marca, nombre, nota o familia" type="search">
+<button disabled="" id="limpiar-perfumes" type="button">Limpiar</button></div></form>
+<fieldset class="e-filters e-perfume-filters" id="filtros-perfumes"><legend>Filtrar por estilo olfativo</legend></fieldset>
+<p class="e-count" id="contador-perfumes" role="status"></p>
+<div class="e-perfume-grid" id="rejilla-perfumes"></div>
+<div class="e-empty" hidden="" id="vacio-perfumes"><h2>No encontramos fragancias</h2><p>Prueba otra palabra o retira el filtro.</p><button class="e-outline" id="reset-perfumes" type="button">Ver todos los perfumes</button></div>
+<p class="e-illustration-disclaimer">Fotografías de los envases comerciales, procedentes de Fragrantica. Consulta la fuente de imagen y la información de la marca en cada ficha. Estela es un proyecto académico independiente.</p>
+</section></main>
+<footer class="e-footer">
+<a class="e-logo" href="index.html"><span>ESTELA</span></a>
+<p>Una revista para descubrir la cultura del perfume.</p>
+<p>Proyecto académico · Revista de demostración</p>
+</footer>
+
+
+<script src="../script/datos.js"></script><script src="../script/perfumes.js"></script><script src="../script/estela.js"></script><script src="../script/perfumes-ui.js"></script></body>
+</html>

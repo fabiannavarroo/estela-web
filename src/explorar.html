@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Busca artículos de Estela por palabra o filtra por etiqueta.">
+<title>Explorar artículos — Estela</title>
+<link rel="icon" href="../images/estela-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&amp;family=Newsreader:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/estela.css">
+</head>
+<body class="estela tema-claro fuente-mediano" data-pagina="explorar">
+<!-- Enlace para saltar la cabecera (teclado y lectores de pantalla) -->
+<a class="e-skip" href="#contenido">Saltar al contenido</a>
+
+<!-- Cabecera y navegación principal -->
+<header class="e-header">
+  <a class="e-logo" href="index.html" aria-label="Estela, inicio"><span>ESTELA</span></a>
+  <nav aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="explorar.html" aria-current="page">Explorar</a>
+    <a href="perfumes.html">Perfumes</a>
+    <a href="guardados.html">Guardados <span id="contador-guardados">(0)</span></a>
+  </nav>
+
+  <details class="e-appearance">
+    <summary aria-label="Ajustes de apariencia"><span class="e-appearance-icon" aria-hidden="true">Aa</span><span class="e-appearance-label">Apariencia</span></summary>
+    <div class="e-appearance-panel">
+      <h2 class="e-appearance-title">Personaliza la lectura</h2>
+      <div class="e-tools">
+        <fieldset>
+          <legend>Tema</legend>
+          <button type="button" data-tema="claro" aria-pressed="true" aria-label="Tema claro">Claro</button>
+          <button type="button" data-tema="oscuro" aria-pressed="false" aria-label="Tema oscuro">Oscuro</button>
+          <button type="button" data-tema="sepia" aria-pressed="false" aria-label="Tema sepia">Sepia</button>
+        </fieldset>
+        <fieldset>
+          <legend>Tamaño del texto</legend>
+          <button type="button" data-tamano="pequeño" aria-pressed="false" aria-label="Tamaño pequeño">Pequeño</button>
+          <button type="button" data-tamano="mediano" aria-pressed="true" aria-label="Tamaño mediano">Mediano</button>
+          <button type="button" data-tamano="grande" aria-pressed="false" aria-label="Tamaño grande">Grande</button>
+        </fieldset>
+      </div>
+    </div>
+  </details>
+</header>
+
+
+
+<main id="contenido" tabindex="-1">
+  <section class="e-section e-explore">
+    <p class="e-kicker">EL ARCHIVO DE ESTELA</p>
+    <h1>Explorar artículos</h1>
+    <p>Encuentra historias por palabra o nota olfativa.</p>
+
+    <!-- Buscador: filtra mientras se escribe y resalta las coincidencias -->
+    <form id="form-buscar" action="explorar.html" method="get" role="search">
+      <label class="e-label" for="buscar">Buscar artículos</label>
+      <div class="e-search">
+        <input id="buscar" name="q" type="search" placeholder="Perfume, ingrediente o tema" autocomplete="off">
+        <button type="button" id="limpiar" disabled>Limpiar</button>
+      </div>
+    </form>
+
+    <!-- Filtro por etiquetas (botones generados por estela.js) -->
+    <fieldset class="e-filters" id="filtros">
+      <legend>Filtrar por etiqueta</legend>
+    </fieldset>
+
+    <p class="e-count" id="contador" role="status"></p>
+    <div class="e-grid" id="rejilla"></div>
+    <div class="e-load-wrap"><button class="e-outline" type="button" id="cargar-mas" hidden>Mostrar más artículos</button></div>
+    <noscript><p>Esta sección necesita JavaScript activado para mostrar los artículos.</p></noscript>
+    <div class="e-empty" id="vacio" hidden>
+      <h2>No encontramos artículos</h2>
+      <p>Prueba otra palabra o elimina el filtro.</p>
+      <button type="button" class="e-outline" id="ver-todos">Ver todos los artículos</button>
+    </div>
+  </section>
+</main>
+
+<footer class="e-footer">
+  <a class="e-logo" href="index.html"><span>ESTELA</span></a>
+  <p>Una revista para descubrir la cultura del perfume.</p>
+  <p>Proyecto académico · Revista de demostración</p>
+</footer>
+
+<script src="../script/datos.js"></script>
+<script src="../script/estela.js"></script>
+</body>
+</html>
